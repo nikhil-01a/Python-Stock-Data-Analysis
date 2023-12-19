@@ -1,1 +1,1 @@
-# Python-Stock-Regression-Analysis
+# Stock Linear Regression Data Analysis
