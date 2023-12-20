@@ -6,15 +6,13 @@ import matplotlib.pyplot as plt
 # Connect to WRDS
 db = wrds.Connection()
 
-
+# Variables
 stock_symbol = 'AAPL'
 index_gvkeyx = '165157' 
 start_date = '2000-01-01'
 end_date = '2020-12-31'
 
 # Querying the monthly stock and index prices
-
-
 apple_query = f"""SELECT date, prc as price
                   FROM crsp.msf
                   WHERE permno in (
@@ -24,17 +22,13 @@ apple_query = f"""SELECT date, prc as price
                   )
                   AND date >= '{start_date}' AND date <= '{end_date}'"""
 
-
-
 gspc_query = f"""SELECT datadate as date, prccm as price
                  FROM comp.idx_mth
                  WHERE gvkeyx = '{index_gvkeyx}'
                  AND datadate >= '{start_date}' AND datadate <= '{end_date}'"""
 
-
 apple_data = db.raw_sql(apple_query)
 gspc_data = db.raw_sql(gspc_query)
-
 
 # Close the WRDS connection
 db.close()
