@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 # Connect to WRDS
 db = wrds.Connection()
+db.create_pgpass_file()
 
 # Variables
 stock_symbol = 'AAPL'
