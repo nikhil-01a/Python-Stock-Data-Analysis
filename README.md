@@ -1,1 +1,1 @@
-# ^GSPC (S&P500) & AAPL (APPLE) Regression Data Analysis
+# ^GSPC (S&P500) & AAPL (APPLE) Liner Regression Data Analysis
